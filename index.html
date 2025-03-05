@@ -106,6 +106,31 @@
         }
         .review-item {
             margin-bottom: 20px;
+            position: relative;
+        }
+        /* 目立たせる対象のレビュー項目 */
+        .review-item.highlight {
+            background-color: rgba(255, 204, 0, 0.2);
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 5px solid #ffcc00;
+            margin-left: -5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+        /* 目立たせる項目のタイトル */
+        .review-item.highlight h3 {
+            color: #ffcc00;
+            font-size: 20px;
+            margin-top: 0;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 8px;
+        }
+        /* 目立たせる項目の内容 */
+        .review-item.highlight p {
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         }
         .example {
             font-style: italic;
@@ -121,6 +146,15 @@
             color: #999;
             padding-top: 20px;
             border-top: 1px solid #eee;
+        }
+        /* 注目を集めるための点滅エフェクト（控えめに） */
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(255,204,0,0.5); }
+            50% { box-shadow: 0 0 15px rgba(255,204,0,0.8); }
+            100% { box-shadow: 0 0 5px rgba(255,204,0,0.5); }
+        }
+        .highlight-effect {
+            animation: glow 3s infinite;
         }
     </style>
 </head>
@@ -138,7 +172,7 @@
         <div class="section-content">
             <h3>パッケージに関する規程</h3>
             <ul>
-                <li><strong>こん包の要件</strong>: 
+                <li><strong>こん包の要件</strong>:
                     <ul>
                         <li>運搬中及び保管時の損傷・劣化を防ぐため、製品に対して適切なこん包を施す</li>
                     </ul>
@@ -159,7 +193,7 @@
         <div class="section-content">
             <h3>パッケージに関する規程</h3>
             <ul>
-                <li><strong>包装に表示する事項</strong>: 
+                <li><strong>包装に表示する事項</strong>:
                     <ul>
                         <li>a) 品名（防じんマスク）</li>
                         <li>b) 種類（隔離式／直結式・吸気補助具付き・使い捨て式）</li>
@@ -189,7 +223,7 @@
         <div class="section-content">
             <h3>パッケージに関する規程</h3>
             <ul>
-                <li><strong>吸収缶の包装に表示する事項</strong>: 
+                <li><strong>吸収缶の包装に表示する事項</strong>:
                     <ul>
                         <li>吸収缶の有効期限</li>
                     </ul>
@@ -213,7 +247,7 @@
         <div class="section-content">
             <h3>パッケージに関する規程</h3>
             <ul>
-                <li><strong>包装に表示する事項</strong>: 
+                <li><strong>包装に表示する事項</strong>:
                     <ul>
                         <li>a) 種類
                             <ul>
@@ -287,7 +321,7 @@
         <div class="section-content">
             <h3>パッケージに関する規程</h3>
             <ul>
-                <li><strong>包装に表示する事項</strong>: 
+                <li><strong>包装に表示する事項</strong>:
                     <p>次の事項を包装に表示しなければならない。なお、略号は一般に分かりやすい方法とする。</p>
                     <ul>
                         <li>a) 規格名称</li>
@@ -324,9 +358,15 @@
 
     <div class="review-section">
         <h2>検討して欲しい事項</h2>
-        
+
+        <!-- ハイライト表示したレビュー項目 -->
+        <div class="review-item highlight highlight-effect">
+            <h3>現状のロット表示の確認</h3>
+            <p>現状のロット表示がどのようになっているかを確認したい。</p>
+        </div>
+
         <div class="review-item">
-            <h3>①ロット番号について</h3>
+            <h3>ロット番号について</h3>
             <p>ロット№は製造年月日又は製造年月、等を使用しています。
             しかし、理解不能なロット表示している製品が残っています。</p>
             <div class="example">例：TB-21→501.63：№63の内職さんが2025年1月に製造？</div>
@@ -336,16 +376,11 @@
                 <li>以前、変更を依頼していたが、変更されていない品番が残っています。</li>
             </ul>
         </div>
-        
-        <div class="review-item">
-            <h3>②現状のロット表示の確認</h3>
-            <p>現状のロット表示がどのようになっているかを確認したい。</p>
-        </div>
     </div>
 
     <footer>
         <p>本資料は安全用品パッケージ表示規程に関する内部用参考資料です</p>
-        <p>© 2025 安全用品製造株式会社</p>
+        <p>© 2025 東洋物産工業株式会社</p>
     </footer>
 </body>
 </html>
